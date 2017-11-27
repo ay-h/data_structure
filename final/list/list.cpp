@@ -40,7 +40,7 @@ void ClearList(List* lp)
 	
 }
 
-//追加元素
+//追加元素，成功返回1,失败返回0
 int ListAppend(List* lp, EleType ele)
 {
 	ChainNode* p=NULL;
@@ -54,7 +54,7 @@ int ListAppend(List* lp, EleType ele)
 	return 0;
 }	
 
-//插入元素
+//插入元素，在第n个元素位置插入元素
 int ListInsert(List* lp, int n, EleType ele)
 {
 	ChainNode* p=NULL;
@@ -62,7 +62,7 @@ int ListInsert(List* lp, int n, EleType ele)
 
 	if(NULL != lp && NULL != newp)
 	{
-		p = GetAddr(lp, n-1);
+		p = GetAddr(lp, n-1);	//第 n 个元素编号为 n-1
 		newp->next = p->next;
 		p->next = newp;
 		return 1;
@@ -70,16 +70,18 @@ int ListInsert(List* lp, int n, EleType ele)
 	return 0;
 }	
 
-//删除元素
+//删除元素，删除第 n 个元素
 int ListDelete(List* lp, int n)
 {
 	ChainNode* temp = NULL;
 	if(NULL != lp && NULL != lp->head->next)
 	{
-		temp = GetAddr(lp, n-1);
+		temp = GetAddr(lp, n-1);	//第 n 个元素编号为 n-1
 		if(NULL != temp && NULL != temp->next)
 		{
-			temp->next = temp->next->next;
+			ChainNode* pt = temp->next;
+			temp->next = pt->next;
+			delete pt;	// 增加内存释放，2017.11.27 
 			return 1;
 		}
 	}
@@ -102,7 +104,7 @@ int GetElememt(List* lp, int n, EleType * ele)
 	return 0;
 }
 
-//取元素地址
+//取元素地址，取编号为 n 的元素的地址。
 ChainNode* GetAddr(List* lp,int n )
 {
 	if(n >= 0)
@@ -119,7 +121,7 @@ ChainNode* GetAddr(List* lp,int n )
 			return p;
 		}
 	}
-	cout<<"n应该为非负数"<<endl;
+	cout<<"n应该大于等于1"<<endl;
 	return NULL;
 }
 
@@ -136,7 +138,9 @@ ChainNode* NewChainNode(EleType ele)
 	return p;
 }
 
-//遍历元素
+/*遍历元素，遍历所有元素，并通过函数指针对元素进行处理，遍历完所有元素返回0 ，否则返回当前元素编号。
+ *链表为空，返回-1
+ */
 int TraverseList(List* lp, int (*f) (EleType *) )	
 {	
 	if(NULL != lp)
@@ -154,7 +158,7 @@ int TraverseList(List* lp, int (*f) (EleType *) )
 		return 0;
 
 	}
-
+	return -1;
 }
 
 void ShowList(List* lp)
