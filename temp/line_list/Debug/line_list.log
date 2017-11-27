@@ -1,0 +1,19 @@
+﻿生成启动时间为 2017/11/27 星期一 20:59:11。
+     1>项目“C:\Users\Administrator\Desktop\line_list\line_list.vcxproj”在节点 2 上(Build 个目标)。
+     1>ClCompile:
+         D:\software\vs2012\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TC /analyze- /errorReport:prompt line_list.c
+         line_list.c
+     1>c:\users\administrator\desktop\line_list\line_list.c(68): warning C4018: “>”: 有符号/无符号不匹配
+     1>c:\users\administrator\desktop\line_list\line_list.c(74): warning C4018: “<”: 有符号/无符号不匹配
+     1>c:\users\administrator\desktop\line_list\line_list.c(90): warning C4018: “>”: 有符号/无符号不匹配
+     1>c:\users\administrator\desktop\line_list\line_list.c(107): warning C4018: “>”: 有符号/无符号不匹配
+     1>c:\users\administrator\desktop\line_list\line_list.c(130): warning C4018: “<”: 有符号/无符号不匹配
+       Link:
+         D:\software\vs2012\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Administrator\Desktop\line_list\Debug\line_list.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Administrator\Desktop\line_list\Debug\line_list.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Administrator\Desktop\line_list\Debug\line_list.lib" /MACHINE:X86 Debug\line_list.obj
+         Debug\main.obj
+         line_list.vcxproj -> C:\Users\Administrator\Desktop\line_list\Debug\line_list.exe
+     1>已完成生成项目“C:\Users\Administrator\Desktop\line_list\line_list.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.44
